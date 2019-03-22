@@ -9,6 +9,7 @@
     "promise-polyfill": "^6.0.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-router-dom": "^5.0.0",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {

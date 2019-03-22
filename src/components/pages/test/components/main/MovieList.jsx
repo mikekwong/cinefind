@@ -17,9 +17,10 @@ const MovieList = ({ movies, info }) => {
     })
 
   return (
-    <div className='movies-list'>
+    <div>
       <h3>{info}</h3>
-      {movieListing}
+      <br />
+      <div className='movies-list'>{movieListing}</div>
     </div>
   )
 }

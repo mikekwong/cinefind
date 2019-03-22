@@ -33,13 +33,13 @@ import windowDataObjects from 'controllers/windowdataobjects.js'
 // ReactDOM.render(<Loadercontainer/>, document.getElementById('spinnerContainer'));
 
 import Test from './components/pages/test/testpage.jsx'
-ReactDOM.render(<Test />, document.querySelector('#root'))
 
 // to interpret the URL, it is important to do this before maincontroller.setup()
 import routerwrapper from 'router/routerwrapper.js'
 
 // to control the flow of this app and state management
 import maincontroller from 'controllers/maincontroller.js'
+ReactDOM.render(<Test />, document.querySelector('#root'))
 window._ = _
 window.dispatcher = dispatcher
 windowDataObjects.setup()

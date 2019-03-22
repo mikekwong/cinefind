@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  justify-content: center;
+  text-align: center;
+}
+
+.movies-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.movie-card {
+  opacity: 1;
+}
+
+.movie-card:hover {
+  opacity: 0.7;
+  transition: opacity 0.25s ease-out;
+
+  cursor: pointer;
+}

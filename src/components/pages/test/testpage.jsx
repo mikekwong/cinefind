@@ -1,54 +1,20 @@
-import React, { Component } from 'react'
-import './testpage.css'
-import SearchBar from './components/SearchBar'
-import MovieList from './components/MovieList'
-import theMovieDB, { API_KEY } from './api/theMovieDB'
+import React from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
+import Navbar from './components/navigation/Navbar'
 
-export default class Test extends Component {
-  constructor () {
-    super()
-    this.state = {
-      movies: [],
-      info: ''
-    }
-    this.onSearchSubmit = this.onSearchSubmit.bind(this)
-  }
+import App from './components/App'
 
-  async componentDidMount () {
-    try {
-      const { data } = await theMovieDB.get(
-        `/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
-      )
-      this.setState({
-        info: 'Most popular movies in the U.S.',
-        movies: data.results
-      })
-    } catch (error) {
-      console.error(error)
-    }
-  }
+const Test = () => (
+  <BrowserRouter>
+    <div>
+      <nav>
+        <Navbar />
+      </nav>
+      <main>
+        <Route exact path='/' component={App} />
+      </main>
+    </div>
+  </BrowserRouter>
+)
 
-  async onSearchSubmit (term) {
-    try {
-      const { data } = await theMovieDB.get(
-        `/search/movie?api_key=${API_KEY}&query=${term}`
-      )
-      this.setState({
-        info: 'Search Results',
-        movies: data.results
-      })
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
-  render () {
-    const { info, movies } = this.state
-    return (
-      <div className='container'>
-        <SearchBar onSubmit={this.onSearchSubmit} />
-        <MovieList info={info} movies={movies} />
-      </div>
-    )
-  }
-}
+export default Test
