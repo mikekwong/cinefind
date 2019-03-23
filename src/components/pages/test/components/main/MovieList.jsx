@@ -18,7 +18,7 @@ const MovieList = ({ movies, info }) => {
 
   return (
     <div>
-      <h3>{info}</h3>
+      <h1 className='text'>{info}</h1>
       <br />
       <div className='movies-list'>{movieListing}</div>
     </div>

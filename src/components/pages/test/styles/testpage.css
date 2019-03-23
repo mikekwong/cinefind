@@ -2,18 +2,107 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #000;
 }
 
 main {
-  justify-content: center;
-  text-align: center;
+
+}
+
+input {
+	position: absolute;
+	margin-left: 10%;
+	left: 0;
+  border: 0;
+  background-color: #fff;
+  border-radius: 18px;
+  padding: 25px;
+  width: 300px;
+  height: 15px;
+	transition: all .2s ease-in-out;
+	font-family: 'Lato', 'Helvetica', sans-serif;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: gray;
+	font-size: 25px;
+}
+
+input:hover {
+  background-color: #1ABC9C;
+}
+
+input:hover::placeholder {
+	color: #FFF;
+}
+
+textarea:focus,
+input:focus {
+	background-color: #FFF;
+	color: gray;
+  outline: none;
+  width: 90%;
+	transition: all .5s ease-in-out;
+}
+
+button {
+	position: absolute;
+	background-color: #FFF;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100px;
+  height: 15px;
+}
+
+.text {
+	text-align: center;
+  color: #fff;
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  margin: 5px 0;
+}
+
+h1.text {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 700;
+	font-size: 40px;
+	color: #1ABC9C;
+	/* border: 5px solid #1ABC9C; */
+	margin: 100px 0 50px 0;
 }
 
 .movies-list {
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 100%;
+}
+
+
+
+p.text {
+	font-weight: 300;
+	font-size: 20px;
+}
+p.text:nth-child(1) {
+	margin-top: 50px;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .movie-card {
@@ -21,8 +110,8 @@ main {
 }
 
 .movie-card:hover {
-  opacity: 0.7;
-  transition: opacity 0.25s ease-out;
-
+  /* opacity: 0.7;
+  transition: opacity 0.25s ease-out; */
+  animation: glow 4s ease-out infinite;
   cursor: pointer;
 }

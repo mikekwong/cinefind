@@ -20,7 +20,7 @@ export default class Test extends Component {
         `/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
       )
       this.setState({
-        info: 'Most popular movies in the U.S.',
+        info: 'Top movie releases in the U.S.',
         movies: data.results
       })
     } catch (error) {

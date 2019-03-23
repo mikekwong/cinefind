@@ -26,9 +26,8 @@ export default class SearchBar extends Component {
       <div className='searchbar'>
         <form onSubmit={this.onFormSubmit} className='form'>
           <div className='field'>
-            <label htmlFor=''>Find Movies</label>
             <input
-              placeholder='Find a movie'
+              placeholder='Search Movies...'
               type='text'
               value={this.state.term}
               onChange={this.onChange}

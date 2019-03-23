@@ -7,14 +7,17 @@ export default class MovieCard extends Component {
 
     return (
       <div>
-        <p>Title: {title}</p>
-        <p>Released: {release_date}</p>
+        <p className='text'>Title: {title}</p>
+        <p className='text'>Released: {release_date}</p>
         {/* <p>{overview}</p> */}
-        <img
-          className='movie-card'
-          alt={title}
-          src={`${thumbnailBaseURL}${poster_path}`}
-        />
+        {/* Render only movies that have images */}
+        {poster_path && (
+          <img
+            className='movie-card'
+            alt={title}
+            src={`${thumbnailBaseURL}${poster_path}`}
+          />
+        )}
       </div>
     )
   }
