@@ -22,7 +22,6 @@ export default class MovieDetail extends Component {
 
   render () {
     const {
-      id,
       original_title,
       poster_path,
       overview,
@@ -43,6 +42,9 @@ export default class MovieDetail extends Component {
           alt={original_title}
           src={`${thumbnailBaseURL}${poster_path}`}
         />
+        <span className='overlay'>
+          <span>Your Text</span>
+        </span>
         <p className='text'>Description:</p>
         <p className='text'>{overview}</p>
       </div>

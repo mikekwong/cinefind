@@ -32,10 +32,10 @@ export default class SearchBar extends Component {
               value={this.state.term}
               onChange={this.onChange}
             />
+            <button type='submit' className='submit'>
+              Submit
+            </button>
           </div>
-          <button type='submit' className='submit'>
-            Search
-          </button>
         </form>
       </div>
     )

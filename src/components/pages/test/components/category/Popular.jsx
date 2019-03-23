@@ -5,11 +5,11 @@ import SearchBar from '../main/SearchBar'
 import MovieList from '../main/MovieList'
 
 export default class Popular extends Component {
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
     this.state = {
-      movies: this.props.parentState.movies,
-      info: this.props.parentState.info
+      movies: [],
+      info: ''
     }
     this.onSearchSubmit = this.onSearchSubmit.bind(this)
   }

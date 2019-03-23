@@ -12,7 +12,7 @@ export default class Navbar extends Component {
   }
   render () {
     return (
-      <div>
+      <div className='navbar'>
         <Link to='/'>Home</Link>
         <Link to='/popular'>Popular Movies</Link>
         <Link to='/toprated'>Top Rated Movies</Link>
