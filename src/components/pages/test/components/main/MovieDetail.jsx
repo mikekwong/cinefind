@@ -11,6 +11,7 @@ export default class MovieDetail extends Component {
   }
   async componentDidMount () {
     const { id } = this.props.match.params
+    console.log('id', id)
     try {
       const { data } = await theMovieDB.get(`/movie/${id}?api_key=${API_KEY}`)
       this.setState({ movieInfo: data })
@@ -21,15 +22,15 @@ export default class MovieDetail extends Component {
 
   render () {
     const {
+      id,
       original_title,
       poster_path,
       overview,
       release_date
     } = this.state.movieInfo
-    console.log(this.state.movieInfo)
+    console.log(this.state.movieInfo.id)
     // const { movie } = this.props.location.state
     // console.log(movie)
-    console.log(this.state.movieInfo)
 
     return (
       <div className='movie-detail-info'>

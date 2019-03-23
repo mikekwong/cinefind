@@ -5,11 +5,11 @@ import SearchBar from '../main/SearchBar'
 import MovieList from '../main/MovieList'
 
 export default class TopRated extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
-      movies: [],
-      info: ''
+      movies: this.props.parentState.movies,
+      info: this.props.parentState.info
     }
     this.onSearchSubmit = this.onSearchSubmit.bind(this)
   }
@@ -20,8 +20,8 @@ export default class TopRated extends Component {
         `/movie/top_rated?api_key=${API_KEY}`
       )
       this.setState({
-        info: 'Top Rated Movies',
-        movies: data.results
+        movies: data.results,
+        info: 'Top Rated Movies'
       })
     } catch (error) {
       console.error(error)

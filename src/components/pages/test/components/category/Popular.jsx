@@ -5,11 +5,11 @@ import SearchBar from '../main/SearchBar'
 import MovieList from '../main/MovieList'
 
 export default class Popular extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
-      movies: [],
-      info: ''
+      movies: this.props.parentState.movies,
+      info: this.props.parentState.info
     }
     this.onSearchSubmit = this.onSearchSubmit.bind(this)
   }
@@ -18,8 +18,8 @@ export default class Popular extends Component {
     try {
       const { data } = await theMovieDB.get(`/movie/popular?api_key=${API_KEY}`)
       this.setState({
-        info: 'Popular Movies',
-        movies: data.results
+        movies: data.results,
+        info: 'Popular Movies'
       })
     } catch (error) {
       console.error(error)
@@ -41,8 +41,7 @@ export default class Popular extends Component {
   }
 
   render () {
-    const { info, movies } = this.state
-    console.log(movies)
+    const { movies, info } = this.state
     return (
       <div className='container'>
         <SearchBar onSubmit={this.onSearchSubmit} />

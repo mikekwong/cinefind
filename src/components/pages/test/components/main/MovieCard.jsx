@@ -14,7 +14,7 @@ export default class MovieCard extends Component {
             <p className='text'>{title}</p>
             <p className='text'>Released:</p>
             <p className='text'>{release_date}</p>
-            <Link to={`/${id}`}>
+            <Link to={`/movie/${id}`}>
               <img
                 className='movie-card'
                 alt={title}
