@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import MovieCard from './MovieCard'
 
 const MovieList = ({ movies, info }) => {
@@ -13,7 +14,11 @@ const MovieList = ({ movies, info }) => {
       return 0
     })
     .map(movie => {
-      return <MovieCard key={movie.id} movie={movie} />
+      return (
+        <Link to={`/${movie.id}`}>
+          <MovieCard key={movie.id} movie={movie} />
+        </Link>
+      )
     })
 
   return (

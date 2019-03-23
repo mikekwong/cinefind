@@ -2,52 +2,51 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #000;
+  background-color: rgb(20, 20, 20);
 }
 
 main {
-
 }
 
 input {
-	position: absolute;
-	margin-left: 10%;
-	left: 0;
+  position: absolute;
+  margin-left: 10%;
+  left: 0;
   border: 0;
   background-color: #fff;
-  border-radius: 18px;
+  border-radius: 50px;
   padding: 25px;
   width: 300px;
   height: 15px;
-	transition: all .2s ease-in-out;
-	font-family: 'Lato', 'Helvetica', sans-serif;
-	font-weight: 300;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	color: gray;
-	font-size: 25px;
+  transition: all 0.2s ease-in-out;
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: gray;
+  font-size: 25px;
 }
 
 input:hover {
-  background-color: #1ABC9C;
+  background-color: #1abc9c;
 }
 
 input:hover::placeholder {
-	color: #FFF;
+  color: #fff;
 }
 
 textarea:focus,
 input:focus {
-	background-color: #FFF;
-	color: gray;
+  background-color: #fff;
+  color: gray;
   outline: none;
   width: 90%;
-	transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 button {
-	position: absolute;
-	background-color: #FFF;
+  position: absolute;
+  background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   width: 100px;
@@ -55,20 +54,20 @@ button {
 }
 
 .text {
-	text-align: center;
+  text-align: center;
   color: #fff;
   font-family: 'Lato', 'Helvetica', sans-serif;
   margin: 5px 0;
 }
 
 h1.text {
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-weight: 700;
-	font-size: 40px;
-	color: #1ABC9C;
-	/* border: 5px solid #1ABC9C; */
-	margin: 100px 0 50px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 40px;
+  color: #1abc9c;
+  /* border: 5px solid #1ABC9C; */
+  margin: 100px 0 50px 0;
 }
 
 .movies-list {
@@ -81,14 +80,16 @@ h1.text {
   width: 100%;
 }
 
-
+a {
+  text-decoration: none;
+}
 
 p.text {
-	font-weight: 300;
-	font-size: 20px;
+  font-weight: 300;
+  font-size: 20px;
 }
 p.text:nth-child(1) {
-	margin-top: 50px;
+  margin-top: 50px;
 }
 
 @keyframes glow {
@@ -112,6 +113,17 @@ p.text:nth-child(1) {
 .movie-card:hover {
   /* opacity: 0.7;
   transition: opacity 0.25s ease-out; */
-  animation: glow 4s ease-out infinite;
+  animation: glow 2s ease-out infinite;
   cursor: pointer;
+}
+
+.movie-detail-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie-detail-info p {
+  width: 100%;
 }
