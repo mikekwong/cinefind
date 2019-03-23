@@ -3,7 +3,7 @@ import { thumbnailBaseURL } from '../../api/theMovieDB'
 
 export default class MovieCard extends Component {
   render () {
-    const { title, overview, poster_path, release_date } = this.props.movie
+    const { title, poster_path, release_date } = this.props.movie
 
     return (
       <div>

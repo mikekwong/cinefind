@@ -29,6 +29,8 @@ export default class MovieDetail extends Component {
     console.log(this.state.movieInfo)
     // const { movie } = this.props.location.state
     // console.log(movie)
+    console.log(this.state.movieInfo)
+
     return (
       <div className='movie-detail-info'>
         <p className='text'>{original_title}</p>

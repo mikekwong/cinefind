@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import '../styles/testpage.css'
+import theMovieDB, { API_KEY } from '../api/theMovieDB'
 import SearchBar from './main/SearchBar'
 import MovieList from './main/MovieList'
-import theMovieDB, { API_KEY } from '../api/theMovieDB'
-
 export default class Test extends Component {
   constructor () {
     super()
