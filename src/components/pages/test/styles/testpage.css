@@ -13,7 +13,6 @@
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  /* padding: 20px; */
   background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -26,15 +25,12 @@
   color: #1abc9c;
   width: 25%;
   background-color: rgba(255, 255, 255, 0.7);
-
-  /* border: 1px solid black; */
   text-align: center;
   transition: background-color 0.25s ease-out;
 }
 .navbar a:hover {
   color: #fff;
   background-color: #1abc9c;
-  /* font-weight: 700; */
 }
 .navbar a:focus {
   text-decoration: none;
@@ -47,11 +43,27 @@
   color: black;
 }
 
-.home {
+#home {
   color: #fff;
-  position: relative;
-  top: 100px;
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  flex-wrap: wrap;
   justify-content: center;
+  text-align: center;
+  top: 150px;
+  position: relative;
+  height: 500px;
+  margin: 0 auto;
+  line-height: 30px;
+}
+
+.home-text:first-child {
+  font-size: 60px;
+}
+
+.home-text {
+  font-size: 18px;
 }
 
 input {
@@ -125,7 +137,6 @@ h1.text {
   font-weight: 700;
   font-size: 50px;
   color: #1abc9c;
-  /* border: 5px solid #1ABC9C; */
   margin: 250px 0 50px 0;
 }
 
@@ -146,8 +157,6 @@ h1.text {
   text-transform: uppercase;
   font-size: 20px;
   font-weight: 700;
-  /* border-top: 5px solid #1abc9c; */
-  /* background-color: #fff; */
   color: #f39c12;
 }
 
@@ -185,8 +194,6 @@ span.overlay span {
 }
 
 .movie-card:hover {
-  /* opacity: 0.7;
-  transition: opacity 0.25s ease-out; */
   animation: glow 2s ease-out infinite;
   cursor: pointer;
 }
