@@ -18,7 +18,6 @@ const Test = () => {
         <main>
           <Route exact path='/' component={App} />
           <Route exact path='/popular' component={Popular} />
-
           <Route exact path='/toprated' component={TopRated} />
           <Route exact path='/upcoming' component={Upcoming} />
           <Route exact path='/movie/:id' component={MovieDetail} />

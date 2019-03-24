@@ -1,19 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import '../styles/testpage.css'
-export default class App extends Component {
-  constructor () {
-    super()
-    this.state = {
-      movies: [],
-      info: ''
-    }
-  }
 
-  render () {
-    return (
-      <div className='container'>
-        <p className='text'>hello world</p>
-      </div>
-    )
-  }
+const App = () => {
+  return (
+    <div className='home'>
+      <h2 id='welcome'>Welcome</h2>
+    </div>
+  )
 }
+
+export default App
