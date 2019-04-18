@@ -6,6 +6,7 @@
 }
 
 .navbar {
+  font: 25px 'Lato', sans-serif;
   border-top: 10px solid #1abc9c;
   position: fixed;
   z-index: 5;
@@ -44,6 +45,7 @@
 }
 
 #home {
+  font: 25px 'Lato', sans-serif;
   color: #fff;
   display: flex;
   flex-direction: row;
@@ -59,6 +61,8 @@
 }
 
 .home-text:first-child {
+  margin-top: 50px;
+  margin-bottom: 40px;
   font-size: 60px;
 }
 
@@ -102,7 +106,8 @@ input:focus {
 }
 
 button {
-  font-weight: 900;
+  font-size: 15px;
+  font-weight: 700;
   cursor: pointer;
   text-transform: uppercase;
   position: relative;

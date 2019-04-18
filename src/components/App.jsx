@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Navbar from './components/navigation/Navbar'
+import Navbar from './navigation/Navbar'
 
-import App from './components/App'
-import Popular from './components/category/Popular'
-import TopRated from './components/category/TopRated'
-import Upcoming from './components/category/Upcoming'
-import MovieDetail from './components/main/MovieDetail'
+import Home from './Home'
+import Popular from './category/Popular'
+import TopRated from './category/TopRated'
+import Upcoming from './category/Upcoming'
+import MovieDetail from './main/MovieDetail'
 
 const Test = () => {
   return (
@@ -16,7 +16,7 @@ const Test = () => {
           <Navbar />
         </nav>
         <main>
-          <Route exact path='/' component={App} />
+          <Route exact path='/' component={Home} />
           <Route exact path='/popular' component={Popular} />
           <Route exact path='/toprated' component={TopRated} />
           <Route exact path='/upcoming' component={Upcoming} />

@@ -14,13 +14,13 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Sixcycle</title>
+    <title>Cinefind</title>
     <!-- link to vendor css here -->
-    <link
+    <!-- <link
       rel="stylesheet"
       type="text/css"
       href="%PUBLIC_URL%/vendor/normalize.min.css"
-    />
+    /> -->
     <link
       href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900"
       rel="stylesheet"
@@ -28,21 +28,12 @@
   </head>
 
   <body>
-    <div id="root" class="container">
-      <div id="headerContainer"></div>
-      <div id="navContainer"></div>
-      <div id="pageContainer"></div>
-      <div id="footerContainer"></div>
-      <div id="modalContainer"></div>
-      <div id="spinnerContainer"></div>
-    </div>
+    <div id="root" class="container"></div>
     <!--
       Until create-web-app allows for pre minified vendor scripts to be added into the
       webpack bundle without being minified again we must add them manually here and
       detect for their load
     -->
-    <!-- link to vendor js here -->
-    <script src="./vendor/testvendor.js"></script>
     <!-- main static js bundle from webpack will be injected here -->
     <!--
       This HTML file is a template.

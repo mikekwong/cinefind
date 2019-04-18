@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import '../../styles/testpage.css'
+import '../../styles/main.css'
 import theMovieDB, { API_KEY } from '../../api/theMovieDB'
 import SearchBar from '../main/SearchBar'
 import MovieList from '../main/MovieList'
 
-export default class Upcoming extends Component {
+export default class Popular extends Component {
   constructor () {
     super()
     this.state = {
@@ -16,12 +16,10 @@ export default class Upcoming extends Component {
 
   async componentDidMount () {
     try {
-      const { data } = await theMovieDB.get(
-        `/movie/upcoming?api_key=${API_KEY}`
-      )
+      const { data } = await theMovieDB.get(`/movie/popular?api_key=${API_KEY}`)
       this.setState({
         movies: data.results,
-        info: 'Upcoming Movies'
+        info: 'Popular Movies'
       })
     } catch (error) {
       console.error(error)
@@ -43,7 +41,7 @@ export default class Upcoming extends Component {
   }
 
   render () {
-    const { info, movies } = this.state
+    const { movies, info } = this.state
     return (
       <div className='container'>
         <SearchBar onSubmit={this.onSearchSubmit} />
