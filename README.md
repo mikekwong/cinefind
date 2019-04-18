@@ -1,1 +1,1 @@
-Run 'npm start' to load project after install all dependencies
+Run 'npm start' to load project after installing all dependencies
