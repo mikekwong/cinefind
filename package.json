@@ -4,13 +4,9 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "director": "^1.2.8",
-    "lodash": "^4.17.4",
-    "promise-polyfill": "^6.0.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-router-dom": "^5.0.0",
-    "whatwg-fetch": "^2.0.3"
+    "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
@@ -20,6 +16,5 @@
     "build": "NODE_PATH=./src react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "homepage": "."
+  }
 }
