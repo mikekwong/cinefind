@@ -7,20 +7,33 @@
     "node-sass": "^4.12.0",
     "postcss": "^7.0.14",
     "postcss-cli": "^6.1.2",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-router-dom": "^5.0.0"
-  },
-  "devDependencies": {
-    "react-scripts": "0.9.5"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.0"
   },
   "scripts": {
     "sass": "node-sass -w src/sass/main.scss public/css/main.min.css --output-style compressed",
     "prebuild:css": "node-sass --include-path src/sass/main.scss public/css/main.css",
     "build:css": "postcss --use autoprefixer -b 'last 2 versions' < public/css/main.css | postcss --use cssnano > public/css/main.min.css --no-map",
-    "start": "NODE_PATH=./src react-scripts start",
-    "build": "NODE_PATH=./src react-scripts build && npm run build:css",
-    "test": "react-scripts test --env=jsdom",
+    "start": "react-scripts start",
+    "build": "react-scripts build && npm run prebuild:css && npm run build:css",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
