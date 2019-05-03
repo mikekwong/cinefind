@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import '../../styles/main.css'
 import theMovieDB, { API_KEY } from '../../api/theMovieDB'
 import SearchBar from '../main/SearchBar'
 import MovieList from '../main/MovieList'
