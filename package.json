@@ -17,7 +17,7 @@
     "prebuild:css": "node-sass --include-path src/sass/main.scss public/css/main.css",
     "build:css": "postcss --use autoprefixer -b 'last 2 versions' < public/css/main.css | postcss --use cssnano > public/css/main.min.css",
     "start": "react-scripts start",
-    "build": "react-scripts build && npm run prebuild:css && npm run build:css",
+    "build": "npm run prebuild:css && npm run build:css && react-scripts build ",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
