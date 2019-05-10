@@ -1,22 +1,36 @@
-import React from 'react'
+import React, { Component } from 'react'
+import theMovieDB, { API_KEY } from './../api/theMovieDB'
+import SearchBar from './main/SearchBar'
+import MovieList from './main/MovieList'
 
-const App = () => {
-  return (
-    <div id='home'>
-      <div>
-        <h1 className='home-text'>Welcome!</h1>
-        <p className='home-text'>Find all your favorite movies here!</p>
-        <p className='home-text'>
-          Find the current popular movies, top rated movies and upcoming movies.
-        </p>
-        <p className='home-text'>
-          Browse through the movie titles, release dates, images, and
-          descriptions.
-        </p>
-        <p className='home-text'>Enjoy!</p>
+export default class Popular extends Component {
+  state = {
+    movies: [],
+    info: '',
+  }
+
+  onSearchSubmit = async term => {
+    try {
+      const { data } = await theMovieDB.get(
+        `/search/movie?api_key=${API_KEY}&query=${term}`
+      )
+      this.setState({
+        info: 'Search Results',
+        movies: data.results,
+      })
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  render() {
+    const { movies, info } = this.state
+    return (
+      <div className="container">
+        <SearchBar onSubmit={this.onSearchSubmit} />
+        <br />
+        <MovieList info={info} movies={movies} />
       </div>
-    </div>
-  )
+    )
+  }
 }
-
-export default App

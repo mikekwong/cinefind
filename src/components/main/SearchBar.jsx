@@ -1,38 +1,31 @@
 import React, { Component } from 'react'
 
 export default class SearchBar extends Component {
-  constructor () {
-    super()
-    this.state = {
-      term: ''
-    }
-    this.onFormSubmit = this.onFormSubmit.bind(this)
-    this.onChange = this.onChange.bind(this)
-  }
+  state = { term: '' }
 
-  onFormSubmit (e) {
+  onFormSubmit = e => {
     e.preventDefault()
     this.props.onSubmit(this.state.term)
   }
 
-  onChange (e) {
+  onChange = e => {
     this.setState({
-      term: e.target.value
+      term: e.target.value,
     })
   }
 
-  render () {
+  render() {
     return (
-      <div className='searchbar'>
-        <form onSubmit={this.onFormSubmit} className='form'>
-          <div className='field'>
+      <div className="searchbar">
+        <form onSubmit={this.onFormSubmit} className="form">
+          <div className="field">
             <input
-              placeholder='Search Movies...'
-              type='text'
+              placeholder="Search Movies..."
+              type="text"
               value={this.state.term}
               onChange={this.onChange}
             />
-            <button type='submit' className='submit'>
+            <button type="submit" className="submit">
               Submit
             </button>
           </div>

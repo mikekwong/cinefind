@@ -4,50 +4,47 @@ import SearchBar from '../main/SearchBar'
 import MovieList from '../main/MovieList'
 
 export default class TopRated extends Component {
-  constructor () {
+  constructor() {
     super()
     this.state = {
       movies: [],
-      info: ''
+      info: '',
     }
     this.onSearchSubmit = this.onSearchSubmit.bind(this)
   }
 
-  async componentDidMount () {
+  async componentDidMount() {
     try {
       const { data } = await theMovieDB.get(
         `/movie/top_rated?api_key=${API_KEY}`
       )
       this.setState({
         movies: data.results,
-        info: 'Top Rated Movies'
+        info: 'Top Rated Movies',
       })
     } catch (error) {
       console.error(error)
     }
   }
 
-  async onSearchSubmit (term) {
+  async onSearchSubmit(term) {
     try {
       const { data } = await theMovieDB.get(
         `/search/movie?api_key=${API_KEY}&query=${term}`
       )
       this.setState({
         info: 'Search Results',
-        movies: data.results
+        movies: data.results,
       })
     } catch (error) {
       console.error(error)
     }
   }
 
-  render () {
+  render() {
     const { info, movies } = this.state
     return (
-      <div className='container'>
-        <SearchBar onSubmit={this.onSearchSubmit} />
-        <br />
-
+      <div className="container">
         <MovieList info={info} movies={movies} />
       </div>
     )
