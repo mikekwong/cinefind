@@ -1,52 +1,19 @@
-import React, { Component } from 'react'
-import theMovieDB, { API_KEY } from '../../api/theMovieDB'
-import SearchBar from '../main/SearchBar'
+import React from 'react'
+import { API_KEY } from '../../api/theMovieDB'
 import MovieList from '../main/MovieList'
+import withFetching from './withFetching'
 
-export default class TopRated extends Component {
-  constructor() {
-    super()
-    this.state = {
-      movies: [],
-      info: '',
-    }
-    this.onSearchSubmit = this.onSearchSubmit.bind(this)
-  }
-
-  async componentDidMount() {
-    try {
-      const { data } = await theMovieDB.get(
-        `/movie/top_rated?api_key=${API_KEY}`
-      )
-      this.setState({
-        movies: data.results,
-        info: 'Top Rated Movies',
-      })
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
-  async onSearchSubmit(term) {
-    try {
-      const { data } = await theMovieDB.get(
-        `/search/movie?api_key=${API_KEY}&query=${term}`
-      )
-      this.setState({
-        info: 'Search Results',
-        movies: data.results,
-      })
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
-  render() {
-    const { info, movies } = this.state
-    return (
-      <div className="container">
-        <MovieList info={info} movies={movies} />
-      </div>
-    )
-  }
+const TopRated = props => {
+  const { info, movies } = props
+  return (
+    <div className="container">
+      <MovieList info={info} movies={movies} />
+    </div>
+  )
 }
+
+export default withFetching(
+  TopRated,
+  `/movie/top_rated?api_key=${API_KEY}`,
+  'Top Rated'
+)
