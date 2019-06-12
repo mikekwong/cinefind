@@ -1,13 +1,23 @@
-* {
+$gray: gray;
+$teal: #1abc9c;
+$white: #fff;
+
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
   background-color: rgb(20, 20, 20);
 }
 
 .navbar {
   font: 25px 'Lato', sans-serif;
-  border-top: 10px solid #1abc9c;
+  border-top: 10px solid $teal;
   position: sticky;
   top: 0;
   z-index: 5;
@@ -15,7 +25,7 @@
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba($white, 0.7);
 
   a {
     font-weight: 900;
@@ -23,20 +33,20 @@
     text-decoration: none;
     padding: 20px 0;
     font-size: 1rem;
-    color: #1abc9c;
+    color: black;
     width: 25%;
     background-color: rgba(255, 255, 255, 0.7);
     text-align: center;
     transition: background-color 0.25s ease-out;
     &:hover {
-      color: #fff;
-      background-color: #1abc9c;
+      color: $white;
+      background-color: black;
     }
 
     &:focus {
       text-decoration: none;
       background-color: rgb(20, 20, 20);
-      color: #fff;
+      color: $white;
     }
 
     &:active {
@@ -48,7 +58,7 @@
 
 #home {
   font: 25px 'Lato', sans-serif;
-  color: #fff;
+  color: $white;
   display: flex;
   flex-direction: row;
   width: 30%;
@@ -77,7 +87,7 @@ input {
   top: 120px;
   left: 5%;
   border: 0;
-  background-color: #fff;
+  background-color: $white;
   border-radius: 50px;
   padding: 25px;
   width: 50%;
@@ -90,17 +100,17 @@ input {
   font-size: 20px;
 
   &:hover {
-    background-color: #f39c12;
+    background-color: gray;
 
     &::placeholder {
-      color: #fff;
+      color: $white;
     }
   }
 }
 
 input:hover textarea:focus,
 input:focus {
-  background-color: #fff;
+  background-color: $white;
   color: gray;
   outline: none;
   width: 90vw;
@@ -113,12 +123,12 @@ button {
   cursor: pointer;
   text-transform: uppercase;
   position: relative;
-  color: #fff;
+  color: $white;
   top: 120px;
   left: 5%;
   margin: 0 auto;
   border: 0;
-  background-color: #1abc9c;
+  background-color: $teal;
   border-radius: 50px;
   padding: 15px 10px 30px 10px;
   width: 150px;
@@ -126,25 +136,32 @@ button {
   transition: all 0.2s ease-out;
 
   &:hover {
-    color: #1abc9c;
+    color: black;
     background-color: rgba(255, 255, 255, 0.9);
   }
 }
 
 .text {
   text-align: center;
-  color: #fff;
+  color: $white;
   font-family: 'Lato', 'Helvetica', sans-serif;
   margin: 5px 0;
 }
 
-h1.text {
+.movies-container {
+}
+
+h2.text {
+  // width: 300px
+  // padding: 60px;
+  padding-bottom: 20px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  // border-bottom: 2px solid $white;
+  letter-spacing: 20px;
   font-weight: 700;
-  font-size: 50px;
-  color: #fff;
-  margin: 80px 0 50px 0;
+  // font-size: 50px;
+  color: $white;
+  margin: 100px 0 10px 0;
 }
 
 .movies-list {
@@ -155,16 +172,22 @@ h1.text {
   justify-content: space-around;
   margin: 0 auto;
   width: 100%;
-  margin: 0 auto;
   align-content: flex-start;
   align-items: flex-start;
 }
 
+.movies-carousel {
+  width: 100%;
+  position: relative;
+  top: 1px;
+  margin: 0 auto;
+}
+
 .title {
-  text-transform: uppercase;
-  font-size: 20px;
+  // text-transform: uppercase;
+  font-size: 25px;
   font-weight: 700;
-  color: #f39c12;
+  color: #fff;
 
   &:first-child {
     margin-top: 50px;
@@ -196,11 +219,13 @@ span.overlay span {
 }
 
 .movie-card {
-  background-color: #1abc9c;
   opacity: 1;
+  width: 100%;
 
   &:hover {
-    animation: glow 2s ease-out infinite;
+    transition: 0.5s all;
+    // box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.75);
+    // animation: glow 2s ease-out infinite;
     cursor: pointer;
   }
 }
@@ -215,7 +240,7 @@ span.overlay span {
     width: 100%;
 
     &:first-child {
-      margin-top: 150px;
+      // margin-top: 150px;
       top: 100px;
     }
 
@@ -238,5 +263,6 @@ span.overlay span {
   font-weight: 300;
   line-height: 22px;
   font-size: 18px;
-  margin-bottom: 80px;
+  padding-bottom: 60px;
+  margin-bottom: 40px;
 }
