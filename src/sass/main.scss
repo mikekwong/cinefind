@@ -20,7 +20,7 @@ body {
 }
 
 .navbar {
-  font: 18px 'Unica One', cursive;
+  font: 18px 'Unica One', Helvetica, cursive;
   text-transform: uppercase;
   border-top: 10px solid $offblack;
   position: sticky;
@@ -62,7 +62,7 @@ body {
 }
 
 #home {
-  font: 25px 'Unica One', cursive;
+  font: 25px 'Unica One', Helvetica, cursive;
   color: $white;
   display: flex;
   flex-direction: row;
@@ -99,7 +99,7 @@ input {
   height: 15px;
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
-  font-family: 'Unica One', cursive;
+  font-family: 'Unica One', Helvetica, cursive;
   letter-spacing: 1px;
   color: $offblack;
   font-size: 20px;
@@ -125,7 +125,7 @@ input:focus {
 button {
   font-size: 18px;
   cursor: pointer;
-  font-family: 'Unica One', cursive;
+  font-family: 'Unica One', Helvetica, cursive;
   text-transform: uppercase;
   position: relative;
   color: $white;
@@ -149,7 +149,7 @@ button {
 .text {
   text-align: center;
   color: $white;
-  font-family: 'Unica One', cursive;
+  font-family: 'Unica One', Helvetica, cursive;
   margin: 5px 0;
 }
 

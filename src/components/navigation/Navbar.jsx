@@ -6,8 +6,8 @@ const Navbar = () => {
     <div className='navbar'>
       <Link to='/'>Home</Link>
       <Link to='/popular'>Popular</Link>
-      <Link to='/toprated'>Top Rated</Link>
       <Link to='/upcoming'>Upcoming</Link>
+      <Link to='/toprated'>Top Rated</Link>
     </div>
   )
 }
