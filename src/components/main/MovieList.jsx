@@ -1,7 +1,6 @@
 // import React from 'react'
 import MovieCard from './MovieCard'
 import Coverflow from 'react-coverflow'
-import { thumbnailBaseURL } from '../../api/theMovieDB'
 import theMovieDB, { API_KEY } from '../../api/theMovieDB'
 
 import React, { Component } from 'react'
@@ -15,7 +14,6 @@ export default class MovieList extends Component {
   }
 
   showDetail = async id => {
-    console.log(id)
     try {
       const { data } = await theMovieDB.get(`/movie/${id}?api_key=${API_KEY}`)
       this.setState({ movieInfo: data })
@@ -28,7 +26,6 @@ export default class MovieList extends Component {
     const { movies, info } = this.props
 
     const movieListing = movies
-      .slice(1)
       .sort((a, b) => {
         if (a.title.toLowerCase() < b.title.toLowerCase()) {
           return -1
@@ -48,25 +45,41 @@ export default class MovieList extends Component {
         )
       })
 
-    const {
-      title,
-      poster_path,
-      overview,
-      release_date,
-      id
-    } = this.state.movieInfo
+    const { title, overview, release_date } = this.state.movieInfo
 
     return (
       <div className='movies-container'>
-        <h2 className='text'>{info}</h2>
+        <h1 className='text'>{info}</h1>
         <br />
         <div className='movies-carousel'>
           <Coverflow
-            width={200}
-            height={525}
-            displayQuantityOfSide={3}
+            // width={960}
+            // height={480}
+            displayQuantityOfSide={2}
             enableScroll={false}
             enableHeading={false}
+            media={{
+              '@media (min-width: 480px)': {
+                width: '500px',
+                height: '300px'
+              },
+              '@media (min-width: 768px)': {
+                width: '800px',
+                height: '400px'
+              },
+              '@media (min-width: 900px)': {
+                width: '1000px',
+                height: '500px'
+              },
+              '@media (min-width: 1200px)': {
+                width: '1300px',
+                height: '600px'
+              },
+              '@media (min-width: 1400px)': {
+                width: '1500px',
+                height: '700px'
+              }
+            }}
           >
             {movieListing}
           </Coverflow>

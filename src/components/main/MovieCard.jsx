@@ -2,8 +2,7 @@ import React from 'react'
 import { thumbnailBaseURL } from '../../api/theMovieDB'
 
 const MovieCard = props => {
-  const { id, title, poster_path, release_date } = props.movie
-
+  const { title, poster_path } = props.movie
   return (
     <>
       <img

@@ -1,25 +1,23 @@
 import React, { Component } from 'react'
-import theMovieDB, { API_KEY } from '../../api/theMovieDB'
-import SearchBar from '../main/SearchBar'
-import MovieList from '../main/MovieList'
+import theMovieDB from '../../api/theMovieDB'
 
 export default (ChildComponent, url, info) => {
   return class extends Component {
     state = { movies: [], info: '' }
 
-    async componentDidMount() {
+    async componentDidMount () {
       try {
         const { data } = await theMovieDB(url)
         this.setState({
           movies: data.results,
-          info,
+          info
         })
       } catch (error) {
         console.error(error)
       }
     }
 
-    render() {
+    render () {
       return (
         <ChildComponent
           {...this.state}

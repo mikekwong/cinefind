@@ -7,6 +7,8 @@ export default class Popular extends Component {
   state = {
     movies: [],
     info: '',
+    error: null,
+    isLoading: true
   }
 
   onSearchSubmit = async term => {
@@ -17,19 +19,27 @@ export default class Popular extends Component {
       this.setState({
         info: 'Search Results',
         movies: data.results,
+        isLoading: false
       })
     } catch (error) {
-      console.error(error)
+      this.setState({
+        error,
+        isLoading: false
+      })
     }
   }
 
-  render() {
-    const { movies, info } = this.state
+  render () {
+    const { movies, info, isLoading } = this.state
     return (
-      <div className="container">
+      <div className='container'>
         <SearchBar onSubmit={this.onSearchSubmit} />
         <br />
-        <MovieList info={info} movies={movies} />
+        {!isLoading ? (
+          <MovieList info={info} movies={movies} />
+        ) : (
+          <p>...Loading</p>
+        )}
       </div>
     )
   }
