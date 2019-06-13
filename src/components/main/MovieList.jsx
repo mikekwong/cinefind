@@ -3,14 +3,11 @@ import React, { Component } from 'react'
 import MovieCard from './MovieCard'
 import Coverflow from 'react-coverflow'
 import theMovieDB, { API_KEY } from '../../api/theMovieDB'
-import { thumbnailBaseURL } from '../../api/theMovieDB'
+import sorting from '../utils/sorting'
 
 export default class MovieList extends Component {
-  constructor() {
-    super()
-    this.state = {
-      movieInfo: [],
-    }
+  state = {
+    movieInfo: [],
   }
 
   showDetail = async id => {
@@ -23,18 +20,14 @@ export default class MovieList extends Component {
   }
 
   render() {
-    const { movies, info } = this.props
-
-    const movieListing = movies
-      .sort((a, b) => {
-        if (a.title.toLowerCase() < b.title.toLowerCase()) {
-          return -1
-        }
-        if (a.title.toLowerCase() > b.title.toLowerCase()) {
-          return 1
-        }
-        return 0
+    const { movies, info, sortBy } = this.props
+    // Utilize utility function to match state of picked radio for sort type in search form
+    const moviesList = sorting(sortBy, movies)
+      // Discard any movies that have missing posters and return only those that exist
+      .filter(movie => {
+        return movie.poster_path
       })
+      // map through and generate a component for each movie in array
       .map(movie => {
         return (
           <MovieCard
@@ -53,8 +46,6 @@ export default class MovieList extends Component {
         <br />
         <div className="movies-carousel">
           <Coverflow
-            // width={960}
-            // height={480}
             displayQuantityOfSide={2}
             enableScroll={false}
             enableHeading={false}
@@ -85,7 +76,7 @@ export default class MovieList extends Component {
               },
             }}
           >
-            {movieListing}
+            {moviesList}
           </Coverflow>
         </div>
         <br />
@@ -94,7 +85,6 @@ export default class MovieList extends Component {
             <p className="text title">{title}</p>
             <p className="text released">Released:</p>
             <p className="text date">{release_date}</p>
-            {/* <p className='text description-text'>Description:</p> */}
             <p className="text description-text overview">{overview}</p>
           </div>
         )}

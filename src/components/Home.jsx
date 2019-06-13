@@ -8,7 +8,8 @@ export default class Popular extends Component {
     movies: [],
     info: '',
     error: null,
-    isLoading: true
+    isLoading: true,
+    sortBy: 'title',
   }
 
   onSearchSubmit = async term => {
@@ -19,24 +20,37 @@ export default class Popular extends Component {
       this.setState({
         info: 'Search Results',
         movies: data.results,
-        isLoading: false
+        isLoading: false,
       })
     } catch (error) {
       this.setState({
         error,
-        isLoading: false
+        isLoading: false,
       })
     }
   }
 
-  render () {
-    const { movies, info, isLoading } = this.state
+  onRadioChange = e => {
+    this.setState({
+      sortBy: e.target.value,
+    })
+  }
+
+  render() {
+    const { movies, info, isLoading, sortBy } = this.state
     return (
-      <div className='container'>
-        <SearchBar onSubmit={this.onSearchSubmit} />
+      // Pass down sortBy state to search bar and movie list so they both have access to it
+      // SearchBar will make changes based on radio selection
+      // MovieList will read from state to pass into Util sort function
+      <div className="container">
+        <SearchBar
+          onSubmit={this.onSearchSubmit}
+          onRadioChange={this.onRadioChange}
+          sortBy={sortBy}
+        />
         <br />
         {!isLoading ? (
-          <MovieList info={info} movies={movies} />
+          <MovieList info={info} movies={movies} sortBy={sortBy} />
         ) : (
           <p>...Loading</p>
         )}
