@@ -1,15 +1,15 @@
 // import React from 'react'
+import React, { Component } from 'react'
 import MovieCard from './MovieCard'
 import Coverflow from 'react-coverflow'
 import theMovieDB, { API_KEY } from '../../api/theMovieDB'
-
-import React, { Component } from 'react'
+import { thumbnailBaseURL } from '../../api/theMovieDB'
 
 export default class MovieList extends Component {
-  constructor () {
+  constructor() {
     super()
     this.state = {
-      movieInfo: []
+      movieInfo: [],
     }
   }
 
@@ -22,7 +22,7 @@ export default class MovieList extends Component {
     }
   }
 
-  render () {
+  render() {
     const { movies, info } = this.props
 
     const movieListing = movies
@@ -48,10 +48,10 @@ export default class MovieList extends Component {
     const { title, overview, release_date } = this.state.movieInfo
 
     return (
-      <div className='movies-container'>
-        <h1 className='text'>{info}</h1>
+      <div className="movies-container">
+        <h1 className="text">{info}</h1>
         <br />
-        <div className='movies-carousel'>
+        <div className="movies-carousel">
           <Coverflow
             // width={960}
             // height={480}
@@ -59,26 +59,30 @@ export default class MovieList extends Component {
             enableScroll={false}
             enableHeading={false}
             media={{
+              '@media (min-width: 320px)': {
+                width: '400px',
+                height: '200px',
+              },
               '@media (min-width: 480px)': {
                 width: '500px',
-                height: '300px'
+                height: '300px',
               },
               '@media (min-width: 768px)': {
                 width: '800px',
-                height: '400px'
+                height: '400px',
               },
               '@media (min-width: 900px)': {
                 width: '1000px',
-                height: '500px'
+                height: '500px',
               },
               '@media (min-width: 1200px)': {
                 width: '1300px',
-                height: '600px'
+                height: '600px',
               },
               '@media (min-width: 1400px)': {
                 width: '1500px',
-                height: '700px'
-              }
+                height: '700px',
+              },
             }}
           >
             {movieListing}
@@ -86,12 +90,12 @@ export default class MovieList extends Component {
         </div>
         <br />
         {title && (
-          <div className='movie-detail-info'>
-            <p className='text title'>{title}</p>
-            <p className='text released'>Released:</p>
-            <p className='text date'>{release_date}</p>
+          <div className="movie-detail-info">
+            <p className="text title">{title}</p>
+            <p className="text released">Released:</p>
+            <p className="text date">{release_date}</p>
             {/* <p className='text description-text'>Description:</p> */}
-            <p className='text description-text overview'>{overview}</p>
+            <p className="text description-text overview">{overview}</p>
           </div>
         )}
       </div>
