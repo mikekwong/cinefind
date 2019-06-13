@@ -3,7 +3,6 @@ import { thumbnailBaseURL } from '../../api/theMovieDB'
 
 const MovieCard = props => {
   const { title, poster_path } = props.movie
-  console.log(poster_path)
   return (
     <img
       onClick={props.movieDetail}

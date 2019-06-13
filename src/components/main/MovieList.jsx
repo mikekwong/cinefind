@@ -4,6 +4,7 @@ import MovieCard from './MovieCard'
 import Coverflow from 'react-coverflow'
 import theMovieDB, { API_KEY } from '../../api/theMovieDB'
 import sorting from '../utils/sorting'
+import MovieSynopsis from './MovieSynopsis'
 
 export default class MovieList extends Component {
   state = {
@@ -80,14 +81,11 @@ export default class MovieList extends Component {
           </Coverflow>
         </div>
         <br />
-        {title && (
-          <div className="movie-detail-info">
-            <p className="text title">{title}</p>
-            <p className="text released">Released:</p>
-            <p className="text date">{release_date}</p>
-            <p className="text description-text overview">{overview}</p>
-          </div>
-        )}
+        <MovieSynopsis
+          title={title}
+          releaseDate={release_date}
+          overview={overview}
+        />
       </div>
     )
   }
