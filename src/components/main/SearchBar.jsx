@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
 export default class SearchBar extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
-      term: '',
+      term: ''
     }
   }
 
@@ -15,71 +15,70 @@ export default class SearchBar extends Component {
 
   onInputChange = e => {
     this.setState({
-      term: e.target.value,
+      term: e.target.value
     })
   }
 
-  render() {
+  render () {
     const { sortBy, onRadioChange } = this.props
     return (
-      <div className="searchbar">
-        <form onSubmit={this.onFormSubmit} className="form">
+      <div className='searchbar'>
+        <form onSubmit={this.onFormSubmit} className='form'>
           <input
-            className="search-input"
-            placeholder="Search Movies..."
-            type="text"
+            className='search-input'
+            placeholder='Search Movies...'
+            type='text'
             value={this.state.term}
             onChange={this.onInputChange}
           />
-          <fieldset className="sortby">
+          <fieldset className='sortby'>
             <legend>Sort By:</legend>
             <div>
               <input
                 onChange={onRadioChange}
-                className="radio"
-                name="sort"
-                type="radio"
-                value="title"
+                className='radio'
+                name='sort'
+                type='radio'
+                value='title'
                 checked={sortBy === 'title'}
               />{' '}
-              <label htmlFor="title">Title</label>
+              <label htmlFor='title'>Title</label>
             </div>
-
             <div>
               <input
                 onChange={onRadioChange}
-                className="radio"
-                name="sort"
-                type="radio"
-                value="date"
+                className='radio'
+                name='sort'
+                type='radio'
+                value='date'
                 checked={sortBy === 'date'}
               />{' '}
-              <label htmlFor="date">Recent / Upcoming Releases</label>
+              <label htmlFor='date'>Recent / Upcoming Releases</label>
             </div>
             <div>
               <input
                 onChange={onRadioChange}
-                className="radio"
-                name="sort"
-                type="radio"
-                value="vote"
+                className='radio'
+                name='sort'
+                type='radio'
+                value='vote'
                 checked={sortBy === 'vote'}
               />{' '}
-              <label htmlFor="vote">Top Voted</label>
+              <label htmlFor='vote'>Top Voted</label>
             </div>
             <div>
               <input
                 onChange={onRadioChange}
-                className="radio"
-                name="sort"
-                type="radio"
-                value="popular"
+                className='radio'
+                name='sort'
+                type='radio'
+                value='popular'
                 checked={sortBy === 'popular'}
               />{' '}
-              <label htmlFor="popular">Most Popular</label>
+              <label htmlFor='popular'>Most Popular</label>
             </div>
           </fieldset>
-          <button type="submit" className="submit">
+          <button type='submit' className='submit'>
             Submit
           </button>
         </form>
