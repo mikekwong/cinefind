@@ -54,7 +54,7 @@ export default class SearchBar extends Component {
                 value="date"
                 checked={sortBy === 'date'}
               />{' '}
-              <label htmlFor="date">Recent/Upcoming Releases</label>
+              <label htmlFor="date">Recent / Upcoming Releases</label>
             </div>
             <div>
               <input
