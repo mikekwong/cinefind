@@ -32,8 +32,7 @@ export default class SearchBar extends Component {
             onChange={this.onInputChange}
           />
           <fieldset className="sortby">
-            <p className="sortby-title">Sort By:</p>
-            <br />
+            <legend>Sort By:</legend>
             <div>
               <input
                 onChange={onRadioChange}

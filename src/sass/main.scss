@@ -137,12 +137,17 @@ fieldset {
   font-family: $unica;
   color: $white;
 
-  label {
-    width: 20vw;
+  legend {
+    font-size: 18px;
+    margin-bottom: 5px;
   }
 
-  .sortby-title {
-    width: 100%;
+  input {
+    margin: 0 5px 0 20px;
+  }
+
+  label {
+    width: 20vw;
   }
 }
 
