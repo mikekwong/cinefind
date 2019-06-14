@@ -22,8 +22,8 @@ export default class SearchBar extends Component {
   render () {
     const { sortBy, onRadioChange } = this.props
     return (
-      <div className='searchbar'>
-        <form onSubmit={this.onFormSubmit} className='form'>
+      <div>
+        <form onSubmit={this.onFormSubmit}>
           <input
             className='search-input'
             placeholder='Search Movies...'
