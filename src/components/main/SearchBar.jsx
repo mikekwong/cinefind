@@ -35,6 +35,7 @@ export default class SearchBar extends Component {
             <legend>Sort By:</legend>
             <div>
               <input
+                id='title'
                 onChange={onRadioChange}
                 className='radio'
                 name='sort'
@@ -46,6 +47,7 @@ export default class SearchBar extends Component {
             </div>
             <div>
               <input
+                id='date'
                 onChange={onRadioChange}
                 className='radio'
                 name='sort'
@@ -57,6 +59,7 @@ export default class SearchBar extends Component {
             </div>
             <div>
               <input
+                id='vote'
                 onChange={onRadioChange}
                 className='radio'
                 name='sort'
@@ -68,6 +71,7 @@ export default class SearchBar extends Component {
             </div>
             <div>
               <input
+                id='popular'
                 onChange={onRadioChange}
                 className='radio'
                 name='sort'
