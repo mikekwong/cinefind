@@ -124,6 +124,8 @@ body {
 }
 
 fieldset {
+  margin-left: 5px;
+  display: block;
   margin-top: 10px;
   border: none;
   position: relative;
@@ -145,6 +147,7 @@ fieldset {
 
   label {
     width: 20vw;
+    margin-right: 20px;
     cursor: pointer;
   }
 }
@@ -302,4 +305,15 @@ span.overlay span {
 
 .no-image {
   color: #fff;
+}
+
+@media all and (min-width: 600px) {
+  fieldset {
+    input {
+      margin-left: 0;
+    }
+    .fieldset-breaks {
+      display: none;
+    }
+  }
 }

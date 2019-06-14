@@ -33,54 +33,49 @@ export default class SearchBar extends Component {
           />
           <fieldset className='sortby'>
             <legend>Sort By:</legend>
-            <div>
-              <input
-                id='title'
-                onChange={onRadioChange}
-                className='radio'
-                name='sort'
-                type='radio'
-                value='title'
-                checked={sortBy === 'title'}
-              />{' '}
-              <label htmlFor='title'>Title</label>
-            </div>
-            <div>
-              <input
-                id='date'
-                onChange={onRadioChange}
-                className='radio'
-                name='sort'
-                type='radio'
-                value='date'
-                checked={sortBy === 'date'}
-              />{' '}
-              <label htmlFor='date'>Recent / Upcoming Releases</label>
-            </div>
-            <div>
-              <input
-                id='vote'
-                onChange={onRadioChange}
-                className='radio'
-                name='sort'
-                type='radio'
-                value='vote'
-                checked={sortBy === 'vote'}
-              />{' '}
-              <label htmlFor='vote'>Top Voted</label>
-            </div>
-            <div>
-              <input
-                id='popular'
-                onChange={onRadioChange}
-                className='radio'
-                name='sort'
-                type='radio'
-                value='popular'
-                checked={sortBy === 'popular'}
-              />{' '}
-              <label htmlFor='popular'>Most Popular</label>
-            </div>
+            <input
+              id='title'
+              onChange={onRadioChange}
+              className='radio'
+              name='sort'
+              type='radio'
+              value='title'
+              checked={sortBy === 'title'}
+            />{' '}
+            <label htmlFor='title'>Title</label>
+            <br className='fieldset-breaks' />
+            <input
+              id='date'
+              onChange={onRadioChange}
+              className='radio'
+              name='sort'
+              type='radio'
+              value='date'
+              checked={sortBy === 'date'}
+            />{' '}
+            <label htmlFor='date'>Recent / Upcoming Releases</label>
+            <br className='fieldset-breaks' />
+            <input
+              id='vote'
+              onChange={onRadioChange}
+              className='radio'
+              name='sort'
+              type='radio'
+              value='vote'
+              checked={sortBy === 'vote'}
+            />{' '}
+            <label htmlFor='vote'>Top Voted</label>
+            <br className='fieldset-breaks' />
+            <input
+              id='popular'
+              onChange={onRadioChange}
+              className='radio'
+              name='sort'
+              type='radio'
+              value='popular'
+              checked={sortBy === 'popular'}
+            />{' '}
+            <label htmlFor='popular'>Most Popular</label>
           </fieldset>
           <button type='submit' className='submit'>
             Submit
