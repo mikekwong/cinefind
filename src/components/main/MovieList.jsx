@@ -52,27 +52,31 @@ export default class MovieList extends Component {
             enableHeading={false}
             media={{
               '@media (min-width: 320px)': {
-                width: '400px',
+                width: '320px',
                 height: '200px'
               },
               '@media (min-width: 480px)': {
-                width: '500px',
+                width: '480px',
                 height: '300px'
               },
               '@media (min-width: 768px)': {
-                width: '800px',
+                width: '768px',
                 height: '400px'
               },
               '@media (min-width: 900px)': {
-                width: '1000px',
+                width: '900px',
                 height: '500px'
               },
+              '@media (min-width: 1024px)': {
+                width: '1024px',
+                height: '550px'
+              },
               '@media (min-width: 1200px)': {
-                width: '1300px',
+                width: '1200px',
                 height: '600px'
               },
               '@media (min-width: 1400px)': {
-                width: '1500px',
+                width: '1400px',
                 height: '700px'
               }
             }}
