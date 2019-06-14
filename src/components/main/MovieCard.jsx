@@ -6,12 +6,12 @@ const MovieCard = props => {
   return (
     <img
       onClick={props.movieDetail}
-      className="movie-card"
+      className='movie-card'
       src={`${thumbnailBaseURL}${poster_path}`}
       alt={title}
       style={{
         display: 'block',
-        width: '100%',
+        width: '100%'
       }}
     />
   )
