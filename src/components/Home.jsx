@@ -3,13 +3,13 @@ import theMovieDB, { API_KEY } from './../api/theMovieDB'
 import SearchBar from './main/SearchBar'
 import MovieList from './main/MovieList'
 
-export default class Popular extends Component {
+export default class Home extends Component {
   state = {
     movies: [],
     info: '',
     error: null,
     isLoading: true,
-    sortBy: 'title',
+    sortBy: 'title'
   }
 
   onSearchSubmit = async term => {
@@ -20,29 +20,29 @@ export default class Popular extends Component {
       this.setState({
         info: 'Search Results',
         movies: data.results,
-        isLoading: false,
+        isLoading: false
       })
     } catch (error) {
       this.setState({
         error,
-        isLoading: false,
+        isLoading: false
       })
     }
   }
 
   onRadioChange = e => {
     this.setState({
-      sortBy: e.target.value,
+      sortBy: e.target.value
     })
   }
 
-  render() {
+  render () {
     const { movies, info, isLoading, sortBy } = this.state
     return (
       // Pass down sortBy state to search bar and movie list so they both have access to it
       // SearchBar will make changes based on radio selection
       // MovieList will read from state to pass into Util sort function
-      <div className="container">
+      <div className='container'>
         <SearchBar
           onSubmit={this.onSearchSubmit}
           onRadioChange={this.onRadioChange}

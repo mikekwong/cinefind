@@ -1,4 +1,4 @@
-// If default type isn't provided (due to other page categories (non search pages)), make default title so the page will have a default sorting mechanism
+// If default type isn't provided (due to other page categories (non search pages)), make default 'title' so the page will have a default sorting mechanism
 export default (type = 'title', movies) => {
   if (type === 'title') {
     return movies.sort((a, b) => {

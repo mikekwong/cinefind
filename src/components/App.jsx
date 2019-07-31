@@ -6,7 +6,7 @@ import Home from './Home'
 import Popular from './category/Popular'
 import TopRated from './category/TopRated'
 import Upcoming from './category/Upcoming'
-import MovieDetail from './main/MovieDetail'
+// import MovieDetail from './main/MovieDetail'
 
 const Test = () => {
   return (
@@ -20,7 +20,7 @@ const Test = () => {
           <Route exact path='/popular' component={Popular} />
           <Route exact path='/toprated' component={TopRated} />
           <Route exact path='/upcoming' component={Upcoming} />
-          <Route exact path='/movie/:id' component={MovieDetail} />
+          {/* <Route exact path='/movie/:id' component={MovieDetail} /> */}
         </main>
       </div>
     </Router>

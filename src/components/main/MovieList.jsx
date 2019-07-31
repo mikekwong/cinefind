@@ -8,7 +8,7 @@ import MovieSynopsis from './MovieSynopsis'
 
 export default class MovieList extends Component {
   state = {
-    movieInfo: []
+    movieInfo: [],
   }
 
   showDetail = async id => {
@@ -20,7 +20,7 @@ export default class MovieList extends Component {
     }
   }
 
-  render () {
+  render() {
     const { movies, info, sortBy } = this.props
     // Utilize utility function to match state of picked radio for sort type in search form
     const moviesList = sorting(sortBy, movies)
@@ -42,10 +42,10 @@ export default class MovieList extends Component {
     const { title, overview, release_date } = this.state.movieInfo
 
     return (
-      <div className='movies-container'>
-        <h1 className='text'>{info}</h1>
+      <div className="movies-container">
+        <h1 className="text">{info}</h1>
         <br />
-        <div className='movies-carousel'>
+        <div className="movies-carousel">
           <Coverflow
             displayQuantityOfSide={2}
             enableScroll={false}
@@ -53,32 +53,32 @@ export default class MovieList extends Component {
             media={{
               '@media (min-width: 320px)': {
                 width: '320px',
-                height: '200px'
+                height: '200px',
               },
               '@media (min-width: 480px)': {
                 width: '480px',
-                height: '300px'
+                height: '300px',
               },
               '@media (min-width: 768px)': {
                 width: '768px',
-                height: '400px'
+                height: '400px',
               },
               '@media (min-width: 900px)': {
                 width: '900px',
-                height: '500px'
+                height: '500px',
               },
               '@media (min-width: 1024px)': {
                 width: '1024px',
-                height: '550px'
+                height: '550px',
               },
               '@media (min-width: 1200px)': {
                 width: '1200px',
-                height: '600px'
+                height: '600px',
               },
               '@media (min-width: 1400px)': {
                 width: '1400px',
-                height: '700px'
-              }
+                height: '700px',
+              },
             }}
           >
             {moviesList}
