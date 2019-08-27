@@ -7,7 +7,7 @@ export default (ChildComponent, url, info) => {
 
     async componentDidMount () {
       try {
-        const { data } = await theMovieDB(url)
+        const { data } = await theMovieDB.get(url)
         this.setState({
           movies: data.results,
           info
